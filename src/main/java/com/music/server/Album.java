@@ -33,6 +33,7 @@ public class Album {
         this.title = newTitle;
     }
 
+    @Override
     public boolean equals(Object o){
         if(this == o){
             return true;
@@ -51,10 +52,12 @@ public class Album {
         }
     }
 
-    public int hashcode(){
+    @Override
+    public int hashCode(){
         return Objects.hash(this.Id, this.title);
     }
 
+    @Override
     public String toString(){
         return this.title;
     }
