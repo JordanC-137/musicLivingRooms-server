@@ -23,7 +23,7 @@ public class AlbumController {
     }
 
     @GetMapping("/albums/{id}")
-    public Album getAlbum(long id){
+    public Album getAlbum(@PathVariable long id){
         return repository.findById(id)
         .orElseThrow(() -> new AlbumNotFoundException(id));
     }

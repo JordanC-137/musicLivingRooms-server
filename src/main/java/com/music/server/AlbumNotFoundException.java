@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 
 public class AlbumNotFoundException extends RuntimeException{
 
-    AlbumNotFoundException(long Id){
-        super("Could not find album with ID: " + Id);
+    AlbumNotFoundException(Long Id){
+        super("Could not find album ID: " + Id);
     }
 }
