@@ -24,8 +24,8 @@ public class Album {
         return this.Id;
     }
 
-    public long getTitle(){
-        return this.Id;
+    public String getTitle(){
+        return this.title;
     }
 
     public void setId(long newId){
