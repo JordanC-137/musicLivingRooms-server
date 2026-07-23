@@ -8,12 +8,15 @@ import jakarta.persistence.GeneratedValue;
 
 @Entity
 public class Album {
-    private @Id @GeneratedValue long Id;
+    private @Id
+    @GeneratedValue long Id;
+
     private String title;
 
     Album() {}
 
-    Album(String title){
+    public Album(String title){
+        System.out.println("1 arg constructor called");
         this.title = title;
     }
 

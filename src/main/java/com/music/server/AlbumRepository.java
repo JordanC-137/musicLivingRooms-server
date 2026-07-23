@@ -1,6 +1,6 @@
 package com.music.server;
 import com.music.server.Album;
-import org.springframework.data.jpa.repository.JpaRepository;;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 interface AlbumRepository extends JpaRepository<Album, Long> {
 

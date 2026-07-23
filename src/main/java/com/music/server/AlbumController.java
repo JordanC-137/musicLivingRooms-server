@@ -19,6 +19,9 @@ public class AlbumController {
 
     @GetMapping("/albums")
     public List<Album> getAlbums(){
+        for(Album album: repository.findAll()){
+            System.out.println("Title : " + album.getTitle());
+        }
         return repository.findAll();
     }
 
@@ -29,8 +32,8 @@ public class AlbumController {
     }
 
     @PostMapping("/albums")
-    public void createAlbum(@RequestBody Album newAlbum){
-        repository.save(newAlbum);
+    Album createAlbum(@RequestBody Album newAlbum){
+        return repository.save(newAlbum);
     }
 
     @DeleteMapping("/employees/{id}")
