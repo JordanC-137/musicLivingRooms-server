@@ -16,7 +16,6 @@ public class Album {
     Album() {}
 
     public Album(String title){
-        System.out.println("1 arg constructor called");
         this.title = title;
     }
 

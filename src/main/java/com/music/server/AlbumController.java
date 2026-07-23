@@ -19,14 +19,11 @@ public class AlbumController {
 
     @GetMapping("/albums")
     public List<Album> getAlbums(){
-        for(Album album: repository.findAll()){
-            System.out.println("Title : " + album.getTitle());
-        }
         return repository.findAll();
     }
 
     @GetMapping("/albums/{id}")
-    public Album getAlbum(@PathVariable long id){
+    public Album getAlbum(@PathVariable Long id){
         return repository.findById(id)
         .orElseThrow(() -> new AlbumNotFoundException(id));
     }
@@ -36,8 +33,8 @@ public class AlbumController {
         return repository.save(newAlbum);
     }
 
-    @DeleteMapping("/employees/{id}")
-    public void deleteAlbum(long id){
+    @DeleteMapping("/albums/{id}")
+    public void deleteAlbum(@PathVariable Long id){
         repository.deleteById(id);;
     }
 }
