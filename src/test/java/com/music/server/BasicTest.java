@@ -16,7 +16,7 @@ class BasicTest {
     private RestTestClient restTestClient;
 
     @Test
-    void getsWithEmptyLists(){
+    void getEmptyThenPost(){
         restTestClient.get().uri("/albums")
         .exchange()
         .expectBody().json("[]");
