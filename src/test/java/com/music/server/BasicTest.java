@@ -25,10 +25,8 @@ class BasicTest {
         .exchange()
         .expectStatus()
         .isNotFound();
-    }
 
-    @Test
-    void testsAfterPost(){
+        // Create album
         Album a1 = new Album("Ziggy Stardust");
 
         restTestClient.post().uri("/albums")
@@ -52,5 +50,4 @@ class BasicTest {
         .accept(MediaType.APPLICATION_JSON)
         .exchange();
     }
-
 }
