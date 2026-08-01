@@ -45,7 +45,7 @@ public class Album {
         }
         else {
             Album otherAlbum = (Album) o;
-            if(this.title == otherAlbum.title){
+            if(this.title.equals(otherAlbum.title)){
                 return true;
             }
             else{
@@ -61,6 +61,6 @@ public class Album {
 
     @Override
     public String toString(){
-        return this.title;
+        return String.format("Album (%s)", this.title);
     }
 }
