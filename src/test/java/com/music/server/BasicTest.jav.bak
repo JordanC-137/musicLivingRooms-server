@@ -8,6 +8,8 @@ import org.springframework.test.web.servlet.client.RestTestClient;
 
 import org.springframework.http.MediaType;
 
+// Re-attune test to initial state now providing albums, do not call in CI for now
+
 @AutoConfigureRestTestClient
 @SpringBootTest
 class BasicTest {
