@@ -3,6 +3,6 @@ package com.music.server;
 import com.music.server.Artist;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-interface ArtistRepository extends JpaRepository<Album, Long> {
+interface ArtistRepository extends JpaRepository<Artist, Long> {
 
 }
