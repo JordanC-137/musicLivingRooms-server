@@ -1,5 +1,6 @@
 package com.music.server;
 
+import java.util.HashSet;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
@@ -13,8 +14,8 @@ public class Artist {
 
     private String name;
 
-    //@OneToMany(mappedBy = "album.artist")
-    //private Album album;
+    @OneToMany(mappedBy = "artist")
+    private HashSet<Album> albums;
 
     Artist() {}
 

@@ -3,6 +3,7 @@ package com.music.server;
 import java.util.Objects;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.GeneratedValue;
 
@@ -16,11 +17,12 @@ public class Album {
     private String title;
 
     @ManyToOne(optional=false)
+    @JoinColumn(name="artist_id", referencedColumnName = "Id")
     private Artist artist;
 
     Album() {}
 
-    public Album(String title, String artistName){
+    public Album(String title){
         this.title = title;
         
     }
