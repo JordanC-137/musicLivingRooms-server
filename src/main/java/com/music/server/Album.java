@@ -3,8 +3,10 @@ package com.music.server;
 import java.util.Objects;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.GeneratedValue;
 
+//import com.music.server.Artist;
 
 @Entity
 public class Album {
@@ -13,10 +15,14 @@ public class Album {
 
     private String title;
 
+    @ManyToOne(optional=false)
+    private Artist artist;
+
     Album() {}
 
-    public Album(String title){
+    public Album(String title, String artistName){
         this.title = title;
+        
     }
 
     public long getId(){
@@ -33,6 +39,14 @@ public class Album {
 
     public void setTitle(String newTitle){
         this.title = newTitle;
+    }
+
+    public Artist getArtist(){
+        return this.artist;
+    }
+
+    public void setArtist(Artist newArtist){
+        this.artist = newArtist;
     }
 
     @Override

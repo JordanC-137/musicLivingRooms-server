@@ -2,13 +2,20 @@ package com.music.server;
 
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
+@Entity
 public class Artist {
     private @Id @GeneratedValue long Id;
 
     private String name;
+
+    //@OneToMany(mappedBy = "album.artist")
+    //private Album album;
+
     Artist() {}
 
     public Artist(String name){
@@ -29,6 +36,14 @@ public class Artist {
     public void setTitle(String newName){
         this.name = newName;
     }
+
+    /*public Album getAlbum(){
+        return this.album;
+    }
+
+    public void setAlbum(Album newAlbum){
+        this.album = newAlbum;
+    } */
 
     @Override
     public boolean equals(Object o){
