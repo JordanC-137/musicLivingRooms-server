@@ -1,7 +1,6 @@
 package com.music.server;
 
 import java.util.HashSet;
-import java.util.Objects;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,13 +33,4 @@ public class Artist {
     public void setName(String newName){
         this.name = newName;
     }
-
-    /*public Album getAlbum(){
-        return this.album;
-    }
-
-    public void setAlbum(Album newAlbum){
-        this.album = newAlbum;
-    } */
-
 }

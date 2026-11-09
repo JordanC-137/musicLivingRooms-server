@@ -1,6 +1,5 @@
 package com.music.server;
 
-import java.util.Objects;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -11,13 +10,13 @@ import jakarta.persistence.GenerationType;
 @Entity
 public class Album {
     private @Id
-    @GeneratedValue(strategy = GenerationType.AUTO  )
+    @GeneratedValue(strategy = GenerationType.AUTO)
     long Id;
 
     private String title;
 
     @ManyToOne(optional=false)
-    @JoinColumn(name="artist_id", referencedColumnName = "Id")
+    @JoinColumn(name="library_id")
     private Artist artist;
 
 
