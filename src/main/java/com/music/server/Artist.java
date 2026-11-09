@@ -7,21 +7,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.GenerationType;
 
 @Entity
 public class Artist {
-    private @Id @GeneratedValue long Id;
+    private @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    long Id;
 
     private String name;
 
     @OneToMany(mappedBy = "artist")
     private HashSet<Album> albums;
 
-    Artist() {}
-
-    public Artist(String name){
-        this.name = name;
-    }
 
     public long getId(){
         return this.Id;
@@ -34,7 +31,7 @@ public class Artist {
         this.Id = newId;
     }
 
-    public void setTitle(String newName){
+    public void setName(String newName){
         this.name = newName;
     }
 
@@ -46,32 +43,4 @@ public class Artist {
         this.album = newAlbum;
     } */
 
-    @Override
-    public boolean equals(Object o){
-        if(this == o){
-            return true;
-        }
-        if((o instanceof Artist) == false){
-            return false;
-        }
-        else {
-            Artist otherArtist = (Artist) o;
-            if(this.name.equals(otherArtist.name)){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-    }
-
-    @Override
-    public int hashCode(){
-        return Objects.hash(this.Id, this.name);
-    }
-
-    @Override
-    public String toString(){
-        return String.format("Artist (%s)", this.name);
-    }
 }
