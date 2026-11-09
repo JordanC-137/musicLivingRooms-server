@@ -9,16 +9,14 @@ import jakarta.persistence.GenerationType;
 
 @Entity
 public class Album {
-    private @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    private @Id @GeneratedValue(strategy = GenerationType.AUTO)
     long Id;
 
     private String title;
 
-    @ManyToOne(optional=false)
+    @ManyToOne
     @JoinColumn(name="library_id")
     private Artist artist;
-
 
     public long getId(){
         return this.Id;
