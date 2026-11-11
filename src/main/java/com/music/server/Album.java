@@ -5,17 +5,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 
 @Entity
 public class Album {
-    private @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    private @Id @GeneratedValue
     long Id;
 
     private String title;
 
     @ManyToOne
-    @JoinColumn(name="library_id")
+    @JoinColumn(name="artist_id")
     private Artist artist;
 
     public long getId(){

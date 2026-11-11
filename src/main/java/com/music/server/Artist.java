@@ -1,22 +1,21 @@
 package com.music.server;
 
-import java.util.HashSet;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.GenerationType;
 
 @Entity
 public class Artist {
-    private @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    private @Id @GeneratedValue
     long Id;
 
     private String name;
 
     @OneToMany(mappedBy = "artist")
-    private HashSet<Album> albums;
+    private List<Album> albums;
 
 
     public long getId(){
