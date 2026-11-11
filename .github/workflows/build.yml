@@ -21,7 +21,7 @@ jobs:
     - name: Set up Java
       uses: actions/setup-java@v5
       with:
-        java-version: '17'
+        java-version: '27'
         distribution: 'temurin'
 
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
